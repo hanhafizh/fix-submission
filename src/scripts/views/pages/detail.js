@@ -1,10 +1,10 @@
-import UrlParser from "../../routes/url-parser";
-import RestoSource from "../../data/resto-source";
+import UrlParser from '../../routes/url-parser';
+import RestoSource from '../../data/resto-source';
 import {
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
-} from "../templates/template-creator";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
+} from '../templates/template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const DetailPages = {
   async render() {
@@ -18,13 +18,13 @@ const DetailPages = {
     // Fungsi ini akan dipanggil setelah render()
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestoSource.RestoDetail(url.id);
-    const restaurantContainer = document.querySelector("#restaurant");
-    const likeButtonContainer = document.querySelector("#likeButtonContainer");
+    const restaurantContainer = document.querySelector('#restaurant');
+    const likeButtonContainer = document.querySelector('#likeButtonContainer');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
     likeButtonContainer.innerHTML = createLikeButtonTemplate();
 
     LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector("#likeButtonContainer"),
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
       movie: {
         id: url.id,
         name: restaurant.name,
