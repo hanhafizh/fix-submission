@@ -1,5 +1,5 @@
-import RestoSource from '../../data/resto-source';
-import { createRestaurantListTemplate } from '../templates/template-creator';
+import RestoSource from "../../data/resto-source";
+import { createRestaurantListTemplate } from "../templates/template-creator";
 
 const ListPages = {
   async render() {
@@ -15,10 +15,10 @@ const ListPages = {
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
     const dataRestaurants = await RestoSource.RestoList();
-    const restaurantsContainer = document.querySelector('#movies');
+    const restaurantsContainer = document.querySelector("#movies");
     dataRestaurants.forEach((restaurants) => {
-      restaurantsContainer.innerHTML
-        += createRestaurantListTemplate(restaurants);
+      restaurantsContainer.innerHTML +=
+        createRestaurantListTemplate(restaurants);
     });
   },
 };

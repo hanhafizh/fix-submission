@@ -30,13 +30,17 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve(__dirname, "src/index.html"),
+      template: path.resolve(__dirname, "src/templates/index.html"),
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src/images/"),
-          to: path.resolve(__dirname, "dist/images/"),
+          from: path.resolve(__dirname, "src/public"),
+          to: path.resolve(__dirname, "dist"),
+          globOptions: {
+            // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
+            ignore: ["**/images/**"],
+          },
         },
       ],
     }),
