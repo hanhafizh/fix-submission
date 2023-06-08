@@ -25,7 +25,7 @@ const DetailPages = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      movie: {
+      resto: {
         id: url.id,
         name: restaurant.name,
         pictureId: restaurant.pictureId,

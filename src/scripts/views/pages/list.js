@@ -6,7 +6,7 @@ const ListPages = {
     return `
     <div class="content">
       <h2 class="content__heading"></h2>
-      <div id="movies" class="movies">
+      <div id="restos" class="restos">
       </div>
     </div>
   `;
@@ -15,7 +15,7 @@ const ListPages = {
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
     const dataRestaurants = await RestoSource.RestoList();
-    const restaurantsContainer = document.querySelector('#movies');
+    const restaurantsContainer = document.querySelector('#restos');
     dataRestaurants.forEach((restaurants) => {
       restaurantsContainer.innerHTML
         += createRestaurantListTemplate(restaurants);

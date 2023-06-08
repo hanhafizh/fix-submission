@@ -1,10 +1,10 @@
-import LikeButtonInitiator from "../../src/scripts/utils/like-button-initiator";
+import LikeButtonPresenter from "../../src/scripts/utils/like-button-initiator";
 
-const createLikeButtonPresenterWithMovie = async (movie) => {
-  await LikeButtonInitiator.init({
+const createLikeButtonPresenterWithresto = async (resto) => {
+  await LikeButtonPresenter.init({
     likeButtonContainer: document.querySelector("#likeButtonContainer"),
-    movie,
+    resto,
   });
 };
 
-export { createLikeButtonPresenterWithMovie };
+export { createLikeButtonPresenterWithresto };
