@@ -12,11 +12,21 @@ if (!fs.existsSync(destination)) {
 fs.readdirSync(target).forEach((image) => {
   // mengubah ukuran gambar dengan lebar 800px, dengan prefix -large.jpg
   sharp(`${target}/${image}`)
+    .resize(1400)
+    .toFile(
+      path.resolve(
+        __dirname,
+        `${destination}/${image.split(".").slice(0, -1).join(".")}xtralarge.jpg`
+      )
+    );
+
+  // mengubah ukuran gambar dengan lebar 800px, dengan prefix -large.jpg
+  sharp(`${target}/${image}`)
     .resize(800)
     .toFile(
       path.resolve(
         __dirname,
-        `${destination}/${image.split(".").slice(0, -1).join(".")}`
+        `${destination}/${image.split(".").slice(0, -1).join(".")}large.jpg`
       )
     );
 
@@ -26,7 +36,7 @@ fs.readdirSync(target).forEach((image) => {
     .toFile(
       path.resolve(
         __dirname,
-        `${destination}/${image.split(".").slice(0, -1).join(".")}`
+        `${destination}/${image.split(".").slice(0, -1).join(".")}small.jpg`
       )
     );
 });
