@@ -27,6 +27,13 @@
 	  text-align: center;
 	  margin: 0;
 	}
+
+	.hero {
+    width: 100%;
+		background-image: url('../public/images/herosHasil/hero-image_2large.jpg');
+	}
+
+
    
   }
    
@@ -59,6 +66,10 @@
 		gap: 10px;
 	  }
 
-	
+		.hero {
+			width: 100%;
+			background-image: url('../public/images/herosHasil/hero-image_2small.jpg');
+		}
+
   }
    
